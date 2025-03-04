@@ -1,0 +1,62 @@
+# This .gitignore file is for Unity C# projects
+
+# Unity generated folders
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]serSettings/
+
+# Asset meta data should only be ignored when the corresponding asset is also ignored
+#!/[Aa]ssets/**/*.meta
+
+# Uncomment this line if you have VFX Graph assets in your project which use the Visual Effect Graph package
+# [Vv]fx/
+
+# Crash Reports
+[Ss]treamingAssets/aa.meta
+[Ss]treamingAssets/aa/
+
+# Auto-generated JetBrains Rider plugin
+[Aa]ssets/Plugins/Editor/JetBrains* 
+
+# User-specific files
+*.swp
+*.sln
+*.csproj
+*.unityproj
+*.pidb
+*.user
+*.userprefs
+*.log
+*.tmproj
+*.pidb.meta
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Visual Studio Code workspace history
+.vscode/
+
+# Node.js files
+node_modules/
+yarn.lock
+package-lock.json
+
+# Gradle cache
+.gradle
+
+# Build artifacts
+*.apk
+*.aab
+*.unitypackage
+
+# Mac OS generated files
+.DS_Store
+
+# Windows generated files
+Thumbs.db
+Desktop.ini
