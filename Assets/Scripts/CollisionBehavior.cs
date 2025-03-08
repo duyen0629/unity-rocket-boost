@@ -13,6 +13,7 @@ public class CollisionBehavior : MonoBehaviour
                 break;
             case "Finish":
                 Debug.Log("Finish");
+                LoadNextLevel();
                 break;
             default:
                 Debug.Log("You crashed dummy");
@@ -23,6 +24,16 @@ public class CollisionBehavior : MonoBehaviour
         {
             int currentScene = SceneManager.GetActiveScene().buildIndex;
             SceneManager.LoadScene(currentScene);
+        }
+
+        void LoadNextLevel()
+        {
+            int nextScene = SceneManager.GetActiveScene().buildIndex + 1;
+            if (nextScene == SceneManager.sceneCountInBuildSettings)
+            {
+                nextScene = 0;
+            }
+            SceneManager.LoadScene(nextScene);
         }
     }
 }
