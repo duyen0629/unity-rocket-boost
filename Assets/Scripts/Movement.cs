@@ -4,15 +4,17 @@ using UnityEngine.InputSystem;
 public class Movement : MonoBehaviour
 {
     [SerializeField] InputAction thrust;
-     [SerializeField] InputAction rotation;
+    [SerializeField] InputAction rotation;
     [SerializeField] float thrustStrength = 1000f;
     [SerializeField] float rotationStrength = 1000f;
     Rigidbody rb;
-    private void Start() {
+    private void Start()
+    {
         rb = GetComponent<Rigidbody>();
     }
 
-    private void OnEnable() {
+    private void OnEnable()
+    {
         thrust.Enable();
         rotation.Enable();
     }
@@ -40,7 +42,7 @@ public class Movement : MonoBehaviour
 
         }
         else if (rotationInput > 0) // right arrow: positive values
-        {             
+        {
             ApplyRotation(-rotationStrength);
         }
 
@@ -48,6 +50,8 @@ public class Movement : MonoBehaviour
 
     private void ApplyRotation(float rotationThisFrame)
     {
+        rb.freezeRotation = true;
         transform.Rotate(Vector3.forward * rotationThisFrame * Time.fixedDeltaTime);
+        rb.freezeRotation = false;
     }
 }
