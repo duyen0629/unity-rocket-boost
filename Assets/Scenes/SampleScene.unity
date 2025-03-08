@@ -530,6 +530,7 @@ GameObject:
   - component: {fileID: 542519002}
   - component: {fileID: 542519001}
   - component: {fileID: 542519003}
+  - component: {fileID: 542519004}
   m_Layer: 0
   m_Name: PlayerRocket
   m_TagString: Untagged
@@ -687,7 +688,7 @@ Rigidbody:
   m_GameObject: {fileID: 542518998}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 10
+  m_Drag: 2
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -717,7 +718,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7f811349e5f5c4f8c88cc10974afc699, type: 3}
   m_Resource: {fileID: 8300000, guid: 7f811349e5f5c4f8c88cc10974afc699, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -802,6 +803,120 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &542519004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542518998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 472ab3437f724461a8985896fcc32cd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &680262020
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 151d34a463cbc19459a944508026bae6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6.0559096
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 151d34a463cbc19459a944508026bae6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 6.0559096
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 151d34a463cbc19459a944508026bae6, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 6.0559096
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 151d34a463cbc19459a944508026bae6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.29
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 151d34a463cbc19459a944508026bae6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 151d34a463cbc19459a944508026bae6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.095255
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 151d34a463cbc19459a944508026bae6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 151d34a463cbc19459a944508026bae6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 151d34a463cbc19459a944508026bae6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 151d34a463cbc19459a944508026bae6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 151d34a463cbc19459a944508026bae6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 151d34a463cbc19459a944508026bae6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 151d34a463cbc19459a944508026bae6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 151d34a463cbc19459a944508026bae6, type: 3}
+      propertyPath: m_Name
+      value: Dropship_05_Fuse_Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 151d34a463cbc19459a944508026bae6, type: 3}
+      propertyPath: m_TagString
+      value: Collider
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 151d34a463cbc19459a944508026bae6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 680262022}
+  m_SourcePrefab: {fileID: 100100000, guid: 151d34a463cbc19459a944508026bae6, type: 3}
+--- !u!1 &680262021 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 151d34a463cbc19459a944508026bae6, type: 3}
+  m_PrefabInstance: {fileID: 680262020}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &680262022
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680262021}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.53921986, y: 0.96757174, z: 0.5639744}
+  m_Center: {x: 0.00000014901161, y: -0.00000035762787, z: 0.0000004172325}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -862,6 +977,10 @@ PrefabInstance:
     - target: {fileID: 5087901567304429965, guid: 07b77f295ab6a354bad6bf30ad5de549, type: 3}
       propertyPath: m_Name
       value: Launch Pad (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5087901567304429965, guid: 07b77f295ab6a354bad6bf30ad5de549, type: 3}
+      propertyPath: m_TagString
+      value: Finish
       objectReference: {fileID: 0}
     - target: {fileID: 5606993804011055927, guid: 07b77f295ab6a354bad6bf30ad5de549, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1159,3 +1278,4 @@ SceneRoots:
   - {fileID: 3696890005394589277}
   - {fileID: 542519000}
   - {fileID: 1749449174}
+  - {fileID: 680262020}
