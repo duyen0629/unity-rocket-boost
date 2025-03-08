@@ -9,6 +9,8 @@ public class CollisionBehavior : MonoBehaviour
 
     AudioSource audioSource;
 
+    bool isControllable = true;
+
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -16,6 +18,7 @@ public class CollisionBehavior : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
+        if (!isControllable) { return; }
         switch (other.gameObject.tag)
         {
             case "Collider":
@@ -33,6 +36,8 @@ public class CollisionBehavior : MonoBehaviour
     void StartSuccessSequence()
     {
         Debug.Log("Finish");
+        isControllable = false;
+        audioSource.Stop();
         audioSource.PlayOneShot(success);
         GetComponent<Movement>().enabled = false;
         Invoke("LoadNextLevel", levelLoadDelay);
@@ -41,6 +46,8 @@ public class CollisionBehavior : MonoBehaviour
     void StartCrashSequence()
     {
         Debug.Log("Hit!!");
+        isControllable = false;
+        audioSource.Stop();
         audioSource.PlayOneShot(crash);
         GetComponent<Movement>().enabled = false;
         Invoke("ReloadLevel", levelLoadDelay);
