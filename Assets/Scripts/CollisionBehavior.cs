@@ -1,20 +1,19 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class CollisionBehavior : MonoBehaviour
 {
+    [SerializeField] float levelLoadDelay = 2f;
+
     void OnCollisionEnter(Collision other)
     {
         switch (other.gameObject.tag)
         {
             case "Collider":
-                Debug.Log("Hit!!");
                 StartCrashSequence();
                 break;
             case "Finish":
-                Debug.Log("Finish");
-                LoadNextLevel();
+                StartSuccessSequence();
                 break;
             default:
                 Debug.Log("You crashed dummy");
@@ -24,10 +23,18 @@ public class CollisionBehavior : MonoBehaviour
 
     }
 
+    void StartSuccessSequence()
+    {
+        Debug.Log("Finish");
+        GetComponent<Movement>().enabled = false;
+        Invoke("LoadNextLevel", levelLoadDelay);
+    }
+
     void StartCrashSequence()
     {
+        Debug.Log("Hit!!");
         GetComponent<Movement>().enabled = false;
-        Invoke("ReloadLevel", 2f);
+        Invoke("ReloadLevel", levelLoadDelay);
     }
 
     void ReloadLevel()
