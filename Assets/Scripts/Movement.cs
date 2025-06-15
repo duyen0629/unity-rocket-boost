@@ -8,6 +8,9 @@ public class Movement : MonoBehaviour
     [SerializeField] float thrustStrength = 1000f;
     [SerializeField] float rotationStrength = 1000f;
     [SerializeField] AudioClip mainEngine;
+    [SerializeField] ParticleSystem mainEngineParticles;
+    [SerializeField] ParticleSystem rightThrustParticles;
+    [SerializeField] ParticleSystem leftThrustParticles;
 
     Rigidbody rb;
     AudioSource audioSource;
@@ -39,10 +42,15 @@ public class Movement : MonoBehaviour
             {
                 audioSource.PlayOneShot(mainEngine);
             }
+            if (!mainEngineParticles.isPlaying)
+            {
+                mainEngineParticles.Play();
+            }
         }
         else
         {
             audioSource.Stop();
+            mainEngineParticles.Stop();
         }
     }
 
@@ -52,11 +60,25 @@ public class Movement : MonoBehaviour
         if (rotationInput < 0) // left arrow: negative values
         {
             ApplyRotation(rotationStrength);
-
+            if (!rightThrustParticles.isPlaying)
+            {
+                leftThrustParticles.Stop();
+                rightThrustParticles.Play();
+            }
         }
         else if (rotationInput > 0) // right arrow: positive values
         {
             ApplyRotation(-rotationStrength);
+            if (!leftThrustParticles.isPlaying)
+            {
+                rightThrustParticles.Stop();
+                leftThrustParticles.Play();
+            }
+        }
+        else
+        {
+            rightThrustParticles.Stop();
+            leftThrustParticles.Stop();
         }
 
     }
